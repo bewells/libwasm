@@ -1,0 +1,20 @@
+{
+    "name": "libwasm",
+    "version": "0.0.1",
+    "description": "An extensible initializer for Web Assembly modules",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/bewells/libwasm.git"
+    },
+    "keywords": ["wasm", "webassembly"],
+    "author": "Benji Ewells",
+    "license": "(MIT OR Apache-2.0)",
+    "bugs": {
+        "url": "https://github.com/bewells/libwasm/issues"
+    },
+    "homepage": "https://github.com/bewells/libwasm#readme"
+}
