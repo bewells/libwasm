@@ -6,12 +6,6 @@ export class InstanceWrapper {
     }
 
     bind(wasmInstance) {
-        if (!(wasmInstance instanceof WebAssembly.Instance)) {
-            throw new TypeError(
-                'Provided instance not of type WebAssembly.Instance'
-            );
-        }
-
         const instance = this.instanceAdapter
             ? this.instanceAdapter(wasmInstance)
             : wasmInstance;
@@ -19,6 +13,8 @@ export class InstanceWrapper {
         instanceValidators.forEach(validate => validate(instance));
 
         this.instance = instance;
+
+        return instance;
     }
 
     setInstanceAdapter(adapter) {

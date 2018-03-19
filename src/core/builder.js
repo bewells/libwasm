@@ -17,6 +17,10 @@ export class ImportBuilder {
             ? this.importAdapter(libObjs)
             : nestImportsByNamespace(libObjs);
 
+        if (this.instanceAdapter) {
+            wrapper.setInstanceAdapter(this.instanceAdapter);
+        }
+
         return [wrapper, imports];
     }
 
