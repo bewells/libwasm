@@ -44,7 +44,7 @@ export class ImportBuilder {
     }
 
     setInstanceAdapter(adapter) {
-        if (typeof lib !== 'function') {
+        if (typeof adapter !== 'function') {
             throw new TypeError('Invalid instance adapter');
         }
         this.instanceAdapter = adapter;

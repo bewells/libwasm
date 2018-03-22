@@ -10,7 +10,10 @@
         "type": "git",
         "url": "git+https://github.com/bewells/libwasm.git"
     },
-    "keywords": ["wasm", "webassembly"],
+    "keywords": [
+        "wasm",
+        "webassembly"
+    ],
     "author": "Benji Ewells",
     "license": "(MIT OR Apache-2.0)",
     "bugs": {
@@ -21,6 +24,7 @@
         "chai": "4.1.2",
         "esm": "3.0.6",
         "mocha": "5.0.4",
-        "sinon": "4.4.6"
+        "sinon": "4.4.6",
+        "sinon-chai": "^3.0.0"
     }
 }
