@@ -21,7 +21,10 @@ export class ImportBuilder {
             wrapper.setInstanceAdapter(this.instanceAdapter);
         }
 
-        return [wrapper, imports];
+        return {
+            wrapper,
+            imports
+        };
     }
 
     include(lib) {

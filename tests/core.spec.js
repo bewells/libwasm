@@ -17,7 +17,9 @@ const makeLibStub = () =>
 describe('Libwasm core', function() {
     it('builds an import context from the included libraries', function() {
         const stubLib = makeLibStub();
-        const [wrapper, imports] = new ImportBuilder().include(stubLib).build();
+        const { wrapper, imports } = new ImportBuilder()
+            .include(stubLib)
+            .build();
 
         expect(imports).to.deep.equal({
             test: {
@@ -28,7 +30,7 @@ describe('Libwasm core', function() {
     });
 
     it('builds an empty import context if no libraries are included', function() {
-        const [wrapper, imports] = new ImportBuilder().build();
+        const { wrapper, imports } = new ImportBuilder().build();
 
         expect(imports).to.deep.equal({});
     });
@@ -38,7 +40,7 @@ describe('Libwasm core', function() {
         const importSpreadAdapter = libObjs => newImports;
 
         const stubLib = makeLibStub();
-        const [wrapper, imports] = new ImportBuilder()
+        const { wrapper, imports } = new ImportBuilder()
             .include(stubLib)
             .setImportAdapter(importSpreadAdapter)
             .build();
@@ -47,7 +49,7 @@ describe('Libwasm core', function() {
     });
 
     it('binds the ImportContext to the generated WebAssembly instance', function() {
-        const [wrapper, imports] = new ImportBuilder().build();
+        const { wrapper, imports } = new ImportBuilder().build();
 
         const wasmInstance = {};
 
@@ -61,7 +63,7 @@ describe('Libwasm core', function() {
         const newInstance = {};
         const instanceAdapter = wasmInstance => newInstance;
 
-        const [wrapper, imports] = new ImportBuilder()
+        const { wrapper, imports } = new ImportBuilder()
             .setInstanceAdapter(instanceAdapter)
             .build();
 
@@ -74,7 +76,7 @@ describe('Libwasm core', function() {
         const validator = sinon.stub();
         const wasmInstance = {};
 
-        const [wrapper, imports] = new ImportBuilder().build();
+        const { wrapper, imports } = new ImportBuilder().build();
 
         wrapper.registerInstanceValidator(validator);
 
